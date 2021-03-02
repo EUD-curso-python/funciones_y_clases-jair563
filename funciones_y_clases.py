@@ -1,13 +1,20 @@
 global1 = 34
 
-def cambiar_global():
+def cambiar_global(num1):
     '''Cambiar una variable global
 
     Esta función debe asignarle a la variable global `global1` el valor que se
     le pasa como único argumento posicional.
     '''
+    global1 = num1
+    print(global1)
     pass
-
+cambiar_global(98)
+cambiar_global(35)
+cambiar_global(76)
+cambiar_global('asdf')
+var4 = 9
+cambiar_global(var4)
 
 def anio_bisiesto():
     '''Responder si el entero pasado como argumento es un año bisiesto
@@ -21,9 +28,20 @@ def anio_bisiesto():
 
     Retorna True o False
     '''
-    pass
 
-def contar_valles():
+bisiesto = 0
+  if anio%4 == 0:
+         bisiesto = True
+          if anio%100 ==0:
+             bisiesto = False
+              if anio%400 == 0:
+                 bisiesto = True
+  return bisiesto
+
+
+
+
+
     r'''Contar el número de valles
 
     Esta función debe recibir como argumento una lista de -1's, 0's y 1's, y lo 
@@ -41,7 +59,20 @@ def contar_valles():
     representados en la lista, que para el ejemplo que se acaba de mostrar es
     de 3 valles.
     '''
-    pass
+lista=[]
+val1 = -1
+val2 = 0
+val3 = 1
+def contar_valles(*argumento):
+  if val1 in argumento:
+      nVal1 = argumento.count(val1)
+      if val2 in argumento:
+          nVal2 = argumento.count(val2)
+          if val3 in argumento:
+              nVal3 = argumento.count(val3)
+              print(argumento)
+  return nVal2
+print('valles: ', str(contar_valles(-1,1,0,1,1,-1,0,0,1,-1,1,1,-1,-1)))
 
 def saltando_rocas():
     '''Mínimo número de saltos en las rocas
@@ -59,7 +90,7 @@ def saltando_rocas():
     '''
     pass
 
-def pares_medias():
+
     '''Contar pares de medias
 
     Esta función debe recibir como argumento una lista de enteros. Cada elemento
@@ -69,7 +100,18 @@ def pares_medias():
     uno de los colores que se encuentren en la lista, y los valores son la 
     cantidad de pares que se han encontrado para cada color.
     '''
-    pass
+
+
+def pares_medias(*medias):
+  dicMedias = {}
+  for x in medias:
+    for y in medias:
+        if medias[x]==medias[y]:
+            dicMedias[x] += 1
+            medias.pop(x)
+            medias.pop(y)
+            break
+  print(dicMedias)
 
 # Crear una clase llamada `ListaComa` que reciba en su constructor un iterable
 # con el valor inicial para una lista que se guardará en un atributo llamado 
